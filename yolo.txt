@@ -1,0 +1,2 @@
+yolov5-master:
+python detect.py --weights yolov5s.pt --source ..\generat1.png --save-txt
