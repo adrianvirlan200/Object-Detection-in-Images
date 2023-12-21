@@ -1,5 +1,30 @@
 # Object Detection in Images
- Color space represents a method of representing colors in a 3D system. The most well-known color space is RGB (Red, Green, Blue), an additive color space that represents the primary colors from which all other colors can be generated.
+
+1. Image Generation using Stable Diffusion Model:
+Generate a series of images based on a given prompt using the Stable Diffusion model in keras-cv.
+Each student will have a specific object and color assigned (from the "ASIGNARE.pdf" resource).
+Experiment with prompt formation to accurately represent the assigned object and color.
+
+2.Image Saving with Specific Compression:
+Save the generated images in a compression format assigned to each student (from the "ASIGNARE.pdf" resource).
+
+3. Object Detection using YOLOv5:
+Detect objects in the generated images using the YOLOv5 object detection network.
+Run YOLOv5 using less complex models for faster detection and save the detection results in text files containing object positions in Darknet annotation format.
+
+4. Cropping Detected Objects:
+Crop the sections containing the assigned object from the generated images, using the text files created in the previous step.
+Save the cropped images in the same format as in step 2.
+
+5. Applying Color Masks and Converting Color Spaces:
+Apply a mask to the cropped images to select only the assigned color.
+Save the masked image in the same format as in step 2.
+Convert the cropped image to a different color space (as assigned in the "ASIGNARE.pdf" resource) and save this image.
+
+6. Transparency Conversion:
+Convert the color mask to an image with transparency, making only the masked section of the object visible.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Color space represents a method of representing colors in a 3D system. The most well-known color space is RGB (Red, Green, Blue), an additive color space that represents the primary colors from which all other colors can be generated.
 
 HSL (for Hue, Saturation, Lightness) is an alternative representation of the RGB color model. In this model, the colors of each hue are arranged in a radial slice around a central axis of neutral colors that varies from black at the bottom to white at the top.
 
