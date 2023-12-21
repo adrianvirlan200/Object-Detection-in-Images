@@ -6,7 +6,8 @@ Each student will have a specific object and color assigned (from the "ASIGNARE.
 Experiment with prompt formation to accurately represent the assigned object and color.
 
 2.Image Saving with Specific Compression:
-Save the generated images in a compression format assigned to each student (from the "ASIGNARE.pdf" resource).
+Save the generated images in a compression format assigned to each student
+(from the "ASIGNARE.pdf" resource).
 
 3. Object Detection using YOLOv5:
 Detect objects in the generated images using the YOLOv5 object detection network.
