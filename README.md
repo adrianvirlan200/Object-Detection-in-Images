@@ -1,2 +1,10 @@
 # Object Detection in Images
- 
+ Color space represents a method of representing colors in a 3D system. The most well-known color space is RGB (Red, Green, Blue), an additive color space that represents the primary colors from which all other colors can be generated.
+
+HSL (for Hue, Saturation, Lightness) is an alternative representation of the RGB color model. In this model, the colors of each hue are arranged in a radial slice around a central axis of neutral colors that varies from black at the bottom to white at the top.
+
+In the program created, to convert the image from BGR space to HSL space, I used the cv2.cvtColor function, which takes as a parameter the initial image (RGB) and cv2.COLOR_BGR2HLS, and returns the image in the new color spectrum.
+
+The color mask helped in extracting the pixels from the image that have a color within certain fixed values. To achieve this, the upper and lower limits were first defined. Then, a binary mask was created: if a pixel is between the previously defined limits, then the corresponding pixel in the mask becomes white, otherwise black. The final step involved applying the mask to the original image, using the bitwise ‘AND’ operation, leaving only those pixels visible whose corresponding pixels in the mask are white (white pixels in the mask are 255, which means 8 ones in binary, resulting in the bit from the image being preserved in the ‘AND’ operation; on the other hand, 0 AND x = 0 => the black pixels in the mask will cause the corresponding pixels in the image to become black).
+
+To remove the black background from the image on which the mask was applied, I started by converting the image from BGR to grayscale. This way, an image with a single channel was obtained. The next step involved creating an alpha channel mask (transparency channel) -> all pixels of 0 take the maximum transparency value (255). The final stage corresponds to merging the alpha channel with the existing three channels (RGB), thus creating an image with 4 channels/transparency.
